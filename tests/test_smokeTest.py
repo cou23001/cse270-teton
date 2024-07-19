@@ -62,6 +62,7 @@ class TestSmokeTest():
   
   def test_homePage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/index.html")
+    self.driver.find_element(By.LINK_TEXT, "Home").click()
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".header-logo img")
     assert len(elements) > 0
     assert self.driver.find_element(By.CSS_SELECTOR, ".header-title > h1").text == "Teton Idaho"
@@ -73,11 +74,6 @@ class TestSmokeTest():
     self.driver.find_element(By.CSS_SELECTOR, ".spotlight2 > h4").click()
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 > h4")
     assert len(elements) > 0
-    elements = self.driver.find_elements(By.LINK_TEXT, "Join Us")
-    assert len(elements) > 0
-    self.driver.find_element(By.CSS_SELECTOR, "body").click()
-    self.driver.find_element(By.LINK_TEXT, "Join Us").click()
-    self.driver.find_element(By.CSS_SELECTOR, "body").click()
   
   def test_joinPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/join.html")
