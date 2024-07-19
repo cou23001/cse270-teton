@@ -80,4 +80,23 @@ class TestSmokeTest():
     self.driver.set_window_size(1436, 887)
     self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").click()
     assert self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").text == "First Name"
+    self.driver.find_element(By.LINK_TEXT, "Join").click()
+    self.driver.find_element(By.NAME, "fname").click()
+    self.driver.find_element(By.NAME, "fname").send_keys("Peter")
+    self.driver.find_element(By.NAME, "lname").click()
+    self.driver.find_element(By.NAME, "lname").send_keys("Pumpkin")
+    self.driver.find_element(By.NAME, "bizname").click()
+    self.driver.find_element(By.NAME, "bizname").send_keys("ATM")
+    self.driver.find_element(By.NAME, "biztitle").click()
+    self.driver.find_element(By.NAME, "biztitle").send_keys("Dr")
+    self.driver.find_element(By.NAME, "submit").click()
+    self.driver.find_element(By.NAME, "email").click()
+    self.driver.find_element(By.NAME, "email").send_keys("peter@gmail.com")
+    self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").click()
+    self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)").click()
+    element = self.driver.find_element(By.CSS_SELECTOR, ".myinput:nth-child(2)")
+    actions = ActionChains(self.driver)
+    actions.double_click(element).perform()
+    elements = self.driver.find_elements(By.CSS_SELECTOR, ".myinput:nth-child(2)")
+    assert len(elements) > 0
   
