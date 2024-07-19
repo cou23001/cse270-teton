@@ -71,6 +71,8 @@ class TestSmokeTest():
     assert len(elements) > 0
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight2 > h4")
     assert len(elements) > 0
+    elements = self.driver.find_elements(By.LINK_TEXT, "Join Us")
+    assert len(elements) > 0
   
   def test_joinPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/join.html")
