@@ -73,6 +73,7 @@ class TestSmokeTest():
     assert len(elements) > 0
     elements = self.driver.find_elements(By.LINK_TEXT, "Join Us")
     assert len(elements) > 0
+    self.driver.find_element(By.LINK_TEXT, "Join Us").click()
   
   def test_joinPage(self):
     self.driver.get("http://127.0.0.1:5500/teton/1.6/join.html")
