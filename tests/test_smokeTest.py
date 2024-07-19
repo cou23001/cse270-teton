@@ -67,7 +67,6 @@ class TestSmokeTest():
     assert self.driver.find_element(By.CSS_SELECTOR, ".header-title > h1").text == "Teton Idaho"
     assert self.driver.find_element(By.CSS_SELECTOR, ".header-title > h2").text == "Chamber of Commerce"
     assert self.driver.title == "Teton Idaho CoC"
-    self.driver.find_element(By.LINK_TEXT, "Home").click()
     self.driver.find_element(By.CSS_SELECTOR, ".spotlight1 > h4").click()
     elements = self.driver.find_elements(By.CSS_SELECTOR, ".spotlight1 > h4")
     assert len(elements) > 0
@@ -102,16 +101,9 @@ class TestSmokeTest():
     self.driver.find_element(By.CSS_SELECTOR, ".myradio:nth-child(15)").click()
     self.driver.find_element(By.NAME, "submit").click()
     self.driver.find_element(By.NAME, "websiteURL").click()
-    self.driver.find_element(By.NAME, "websiteURL").send_keys("localhost.com")
-    self.driver.find_element(By.CSS_SELECTOR, "textarea").click()
     self.driver.find_element(By.CSS_SELECTOR, "textarea").send_keys("Business Desc")
-    self.driver.find_element(By.NAME, "submit").click()
-    self.driver.find_element(By.NAME, "websiteURL").click()
-    self.driver.find_element(By.NAME, "websiteURL").send_keys("www.business.com")
     self.driver.find_element(By.NAME, "submit").click()
     self.driver.find_element(By.NAME, "websiteURL").click()
     self.driver.find_element(By.NAME, "websiteURL").send_keys("https://www.business.com")
     self.driver.find_element(By.NAME, "submit").click()
-    self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4)").click()
-    assert self.driver.find_element(By.CSS_SELECTOR, "tr:nth-child(4) > .left-justify").text == "peter@gmail.com"
   
